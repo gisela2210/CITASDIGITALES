@@ -1,0 +1,7 @@
+MiSalud: un solo archivo SQL
+
+El unico SQL vigente es database/misalud.sql.
+NO importes migracion_v5.sql ni migracion_v7.sql.
+Si tu carpeta antigua los conserva, puedes eliminarlos de la carpeta local, pero NO elimines tus tablas de MariaDB.
+Antes de importar o reparar la base, exporta un respaldo desde phpMyAdmin.
+Para completar estructura en localhost, puedes usar instalar.php y retirarlo al terminar.

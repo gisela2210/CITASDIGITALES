@@ -1,0 +1,65 @@
+MiSalud — Instalación única para XAMPP (Windows)
+================================================
+
+IMPORTANTE: Antes de actualizar cualquier instalación con datos, haz un respaldo
+completo desde phpMyAdmin (Exportar -> SQL) y una copia de tu carpeta MiSalud.
+No borres la base de datos existente.
+
+1. Descomprime este ZIP. Dentro está la carpeta MiSalud.
+2. Copia MiSalud directamente a C:\xampp\htdocs\MiSalud\
+   Debe existir C:\xampp\htdocs\MiSalud\index.php (sin carpetas duplicadas).
+3. Enciende Apache y MySQL en XAMPP.
+4. Abre en tu navegador: http://localhost:80/MiSalud/instalar.php
+5. Revisa si detecta las 14 tablas principales y los 5 campos del expediente.
+   Si indica faltantes, haz clic en "Instalar o reparar base de datos".
+6. La herramienta utiliza el archivo ÚNICO: database/misalud.sql.
+   Si ya importaste ese SQL con phpMyAdmin, también puedes verificar desde
+   instalar.php que no queden tablas ni campos pendientes.
+7. Crea el primer administrador (si aún no existe):
+   http://localhost:80/MiSalud/setup_admin.php
+8. Abre: http://localhost:80/MiSalud/index.php
+9. Después de finalizar, BORRA instalar.php y setup_admin.php del servidor.
+10. Para actualizar CSS y JS en tu navegador, presiona Ctrl+F5.
+
+CONEXIÓN A LA BASE
+------------------
+El archivo config/database.php espera inicialmente:
+Host: 127.0.0.1
+Base: misalud_db
+Usuario: root
+Contraseña: vacía
+
+Si configuraste una contraseña en MariaDB, corrígela en config/database.php.
+No compartas el archivo con tus contraseñas.
+
+QUÉ INCLUYE
+-----------
+- Paciente: registro, agenda y calendario, turnos, donaciones, perfil,
+  archivos privados, soporte y chatbot orientativo.
+- Médico: calendario, citas, expediente ampliado del paciente, cédula,
+  recetas, exportaciones CSV/PDF, reconocimientos, almacenamiento y soporte.
+- Administrador: médicos, pacientes, citas, calendario, gráficas, turnos,
+  donaciones, soporte y planes.
+- Un solo esquema SQL integrado, reutilizable para instalación y actualización.
+
+IMPORTANTE SOBRE EL EXPEDIENTE
+------------------------------
+Los nuevos campos (sexo, domicilio, ocupación, nombre y teléfono del contacto
+emergencia) aparecen dentro de cada cita en Médico > Mi agenda >
+Ver expediente del paciente. La fecha de nacimiento se toma del registro.
+La cédula corresponde al médico autenticado.
+
+Esta versión es para desarrollo local, no para almacenar información médica
+real en producción sin una auditoría de seguridad, privacidad y permisos.
+
+SI NO ABRE
+----------
+- 404 Not Found: comprueba carpeta y nombre de la URL.
+- No se puede conectar: inicia MySQL y revisa config/database.php.
+- Tablas o campos faltantes: ejecuta instalar.php y repara la estructura.
+- El doctor no aparece al paciente: activa y verifica la cuenta en el
+  administrador, asígnale especialidad y horario de atención.
+
+Esta entrega ha sido revisada con el validador de sintaxis de PHP y JS.
+No se ha ejecutado en tu XAMPP particular; instalar.php sirve para comprobar
+la instalación real en tu computadora.

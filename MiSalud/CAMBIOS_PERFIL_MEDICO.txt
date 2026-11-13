@@ -1,0 +1,9 @@
+MiSalud - perfil médico actualizado
+
+* Campos obligatorios señalados con asterisco.
+* Mensajes claros por campo, domicilio separado.
+* Fotografía se cambia pulsando la imagen/avatar.
+* Mi perfil en el círculo superior derecho del médico.
+* Un solo SQL: database/misalud.sql.
+
+RESPALDA base y archivos antes de actualizar. Abre instalar.php desde localhost y repara campos faltantes. Después elimina instalar.php y setup_admin.php.

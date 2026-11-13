@@ -1,0 +1,10 @@
+MiSalud - PERFIL MEDICO AMPLIADO
+
+1. Realiza respaldo de misalud_db y de la carpeta MiSalud.
+2. Reemplaza la carpeta del proyecto.
+3. Abre http://localhost/MiSalud/instalar.php, revisa los campos del medico y ejecuta la reparación si es necesaria.
+4. Prueba perfil medico, foto y cedula. El documento de cedula no es publico.
+5. Elimina instalar.php y setup_admin.php después de la instalación.
+
+Todo el esquema está en database/misalud.sql. No hay que importar migraciones separadas.
+No utilizar con datos médicos reales hasta auditar permisos, seguridad de archivos y privacidad.
